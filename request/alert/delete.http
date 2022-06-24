@@ -1,0 +1,5 @@
+DELETE {{hostname}}/role/
+
+{
+  "id": 1
+}

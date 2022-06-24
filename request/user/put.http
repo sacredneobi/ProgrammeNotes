@@ -1,0 +1,5 @@
+PUT {{hostname}}/user/
+
+{
+  "id": 1
+}

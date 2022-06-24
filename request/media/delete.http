@@ -1,0 +1,5 @@
+DELETE {{hostname}}/media/
+
+{
+  "id": 1
+}

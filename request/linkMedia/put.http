@@ -1,0 +1,5 @@
+PUT {{hostname}}/linkMedia/
+
+{
+  "id": 1
+}

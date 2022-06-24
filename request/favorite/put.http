@@ -1,0 +1,5 @@
+PUT {{hostname}}/favorite/
+
+{
+  "id": 1
+}

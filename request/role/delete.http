@@ -1,0 +1,5 @@
+DELETE {{hostname}}/alert/
+
+{
+  "id": 2
+}

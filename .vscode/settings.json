@@ -1,0 +1,10 @@
+{
+  "rest-client.environmentVariables": {
+    "$shared": {},
+    "ENV Developer": { "hostname": "http://localhost:4000/api" }
+  },
+  "rest-client.defaultHeaders": {
+    "User-Agent": "sacred-client",
+    "Content-Type": "application/json"
+  }
+}

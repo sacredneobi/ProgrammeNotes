@@ -1,0 +1,5 @@
+PUT {{hostname}}/alert/
+
+{
+  "id": 1
+}

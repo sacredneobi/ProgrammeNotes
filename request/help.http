@@ -1,0 +1,19 @@
+GET {{hostname}}/alert/help
+###
+GET {{hostname}}/article/help
+###
+GET {{hostname}}/comment/help
+###
+GET {{hostname}}/favorite/help
+###
+GET {{hostname}}/group/help
+###
+GET {{hostname}}/linkMedia/help
+###
+GET {{hostname}}/media/help
+###
+GET {{hostname}}/role/help
+###
+GET {{hostname}}/service/help
+###
+GET {{hostname}}/user/help

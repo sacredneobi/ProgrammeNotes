@@ -1,0 +1,5 @@
+DELETE {{hostname}}/comment/
+
+{
+  "id": 1
+}
