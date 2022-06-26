@@ -1,34 +1,36 @@
 {
-  "name": "telegrambotgui",
+  "name": "programernotes",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://test.sacred.us.to:4000",
+  "proxy": "http://127.0.0.1:4000",
   "dependencies": {
+    "@craco/craco": "^5.9.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@mui/material": "^5.7.0",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
     "@testing-library/user-event": "^13.5.0",
-    "axios": "^0.27.2",
-    "axios-hooks": "^3.1.0",
     "i18next": "^21.8.3",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
+    "mobx": "^6.6.0",
+    "mobx-react-lite": "^3.4.0",
     "path-parser": "^6.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-i18next": "^11.16.9",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-telegram-webapp": "github:davidsl4/react-telegram-webapp",
+    "use-http": "^1.0.26",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
   },
   "eslintConfig": {
     "extends": [
