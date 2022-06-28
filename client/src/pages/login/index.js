@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import {
   TextField,
   Typography,
@@ -6,11 +6,19 @@ import {
   CardContent,
   Card,
 } from "@mui/material";
+import { useAuth } from "@api";
 import { Button, Box } from "@components";
 import image from "../../static/images/123.jpg";
 
 const Default = (props) => {
-  const { setIsAuth } = props;
+  // const { setIsAuth } = props;
+
+  const [data, setData] = useState(null);
+  const [callbackAuth, loading] = useAuth();
+
+  if (data?.isAuth) {
+    localStorage.setItem("JWT", data.accessToken);
+  }
 
   return (
     <Card sx={{ maxWidth: 500, width: "100%" }}>
@@ -26,13 +34,20 @@ const Default = (props) => {
         </Typography>
       </CardContent>
       <Box sx={{ display: "flex", flexDirection: "column", gap: 3, margin: 2 }}>
-        <TextField id="login" label="Login" fullWidth variant="standard" />
+        <TextField
+          id="login"
+          label="Login"
+          fullWidth
+          variant="standard"
+          disabled={loading}
+        />
         <TextField
           id="password"
           label="password"
           type="password"
           fullWidth
           variant="standard"
+          disabled={loading}
         />
         <Box
           sx={{
@@ -43,13 +58,15 @@ const Default = (props) => {
             margin: 0,
           }}
         >
-          <Button variant="contained" color="error">
+          <Button variant="contained" color="error" disabled={loading}>
             Sing-in
           </Button>
           <Button
             variant="contained"
+            disabled={loading}
             onClick={() => {
-              setIsAuth(true);
+              callbackAuth(setData, { login: "login", password: "password" });
+              // setIsAuth(true);
             }}
           >
             Login

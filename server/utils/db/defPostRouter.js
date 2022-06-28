@@ -9,11 +9,19 @@ const action = (model, fields = null, operation) => {
 
 const def = (operation) => {
   if (typeof operation === "function") {
-    return (router, moduleName, model, fields = null) => {
-      router.post(
-        "/",
-        checkMethod(action(model, fields, operation), moduleName)
-      );
+    return (router, moduleName, model, fields = null, checkJWT) => {
+      if (typeof checkJWT === "function") {
+        router.post(
+          "/",
+          checkJWT,
+          checkMethod(action(model, fields, operation), moduleName)
+        );
+      } else {
+        router.post(
+          "/",
+          checkMethod(action(model, fields, operation), moduleName)
+        );
+      }
     };
   }
   throw new Error("Operation is not a function");

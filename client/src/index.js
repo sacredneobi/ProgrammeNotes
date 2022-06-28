@@ -9,15 +9,15 @@ const Default = (props) => {
     cachePolicy: "no-cache",
     interceptors: {
       request: async ({ options }) => {
-        console.log("request");
         options.headers = {
-          Authorization: "XXXXXXXXXX",
+          Authorization:
+            "JWT " +
+            (localStorage.getItem("JWT") ? localStorage.getItem("JWT") : null),
           "Content-Type": "application/json",
         };
         return options;
       },
       response: (props) => {
-        console.log("response");
         // if (401 === props.response?.status) {
         // }
         return props.response;

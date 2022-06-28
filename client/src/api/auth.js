@@ -6,8 +6,8 @@ const useAuth = (props) => {
 
   return [
     useCallback(
-      (setData) => {
-        post("").then((data) => {
+      (setData, auth) => {
+        post("", auth).then((data) => {
           setData(response.ok ? data : null);
         });
       },

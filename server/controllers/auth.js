@@ -1,5 +1,7 @@
 const models = require("../db/models");
 const { checkMethod, sleep } = require("../utils");
+var jwt = require("jsonwebtoken");
+
 // const {
 //   defaultPostRouter,
 //   defaultDeleteRouter,
@@ -11,7 +13,11 @@ const { checkMethod, sleep } = require("../utils");
 
 const postAuth = async (req, res) => {
   await sleep(4000);
-  res.status(200).send({ isAuth: true });
+  var token = jwt.sign(
+    { id: 100, user: { first: "sacred", last: "sacred" }, role: "admin" },
+    process.env["SECRET_TOKEN"]
+  );
+  res.status(200).send({ isAuth: true, accessToken: token });
 };
 
 module.exports = (router, moduleName) => {

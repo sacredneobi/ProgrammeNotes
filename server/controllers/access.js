@@ -18,7 +18,7 @@ const get = async (req, res) => {
   res.status(200).send({ route: defMenu, routeSetting: defSettings });
 };
 
-module.exports = (router, moduleName) => {
+module.exports = (router, moduleName, checkJWT) => {
   // model = models[moduleName];
-  router.get("/", checkMethod(get, moduleName));
+  router.get("/", checkJWT, checkMethod(get, moduleName));
 };
